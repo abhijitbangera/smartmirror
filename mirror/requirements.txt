@@ -1,0 +1,14 @@
+beautifulsoup4==4.4.1
+cssselect==0.9.1
+Django==1.9.4
+feedfinder2==0.0.4
+feedparser==5.2.1
+horoscope==1.0.1
+idna==2.0
+lxml==3.4.4
+Pillow==3.1.1
+pywapi==0.3.8
+PyYAML==3.11
+requests==2.9.1
+six==1.10.0
+tldextract==1.7.5

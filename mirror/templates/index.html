@@ -94,7 +94,35 @@ body
     display: block
     }
 
+.box {
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 140px;
+    left: 550px;
+    width: 100%;
+    height: 20px;
+    visibility: visible;
+    width:250px;
+    padding-top:5px;
+    padding-left:3px;
+    padding-bottom:10px;
+}
 
+.box_news {
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    text-align: left;
+    position: absolute;
+    top: 340px;
+    left: 550px;
+    width: 100%;
+    height: 20px;
+    visibility: visible;
+    width:400px;
+    padding-top:5px;
+    padding-left:3px;
+    padding-bottom:10px;
+}
 
 a:link, a:visited 
     {
@@ -117,6 +145,15 @@ a:hover
 	    
 	    {% if weather_type == 'Partly Cloudy' %}
 	       <img src="static/media/partly-cloudy.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+        {% elif weather_type == 'Clear' %}
+            <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+        {% elif weather_type == 'Mostly Sunny' %}
+            <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+        {% elif weather_type == 'Sunny' %}
+            <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+        {% elif weather_type == 'Unseasonably hot' %}
+            <img src="static/media/hot.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+
 	    {% endif %}<br>
 	    <span class="headline">{{temperature}}°C</span><br>
 	    <span class="bodytext">{{weather_type}}</span><br>
@@ -126,11 +163,28 @@ a:hover
         {{day_plus2}}={{day_plus2_type}} | {{day_plus2_low}}-{{day_plus2_high}}°C <br>
         {{day_plus3}}={{day_plus3_type}} | {{day_plus3_low}}-{{day_plus3_high}}°C <br>
         {{day_plus4}}={{day_plus4_type}} | {{day_plus4_low}}-{{day_plus4_high}}°C <br>
+        <br><br><br>
 
+        <h2>Top News</h2><br>
+        <p class="box_news">
+         <span>
+           1. {{news1}}<br>
+           2. {{news2}}<br>
+           3. {{news3}}<br>
+           4. {{news4}}<br>
+           5. {{news5}}<br>
+        </span>
 	</div>	
 	<div id="datetime">
 	    <span class="headline">{{time}}</span><br>
-	    <span class="headline">{{date}}</span><br>
+	    <span class="headline">{{date}}</span><br><br><br><br>
+
+        <h2>Today's Prediction</h2><br>
+        <p class="box">
+         <span>
+           {{prediction}}
+        </span>
+</p>
 	</div>
 	<div id="horizon">
 	    <div id="content">
@@ -138,6 +192,7 @@ a:hover
 	        Hey<br>
 	        <span class="headline">{{name}}</span><br>
 	        Welcome!
+           
 	        </div>
 	    </div>
 	</div>
