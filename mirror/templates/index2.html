@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <style type="text/css" media="screen">
+      body 
+          {
+          color: white;
+          background-color: #000000;
+          margin: 0px
+          }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class='col-sm-4'><br>
+      <center><b>{{Location}}</b><br>
+        {% if weather_type == 'Partly Cloudy' %}
+           <img src="static/media/partly-cloudy.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+          {% elif weather_type == 'Clear' or 'Fair' %}
+              <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+          {% elif weather_type == 'Mostly Sunny' %}
+              <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+          {% elif weather_type == 'Sunny' %}
+              <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+          {% elif weather_type == 'Unseasonably hot' %}
+              <img src="static/media/hot.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
+
+        {% endif %}<br>
+        
+          {{temperature}}°C<br>
+          {{weather_type}}<br>
+          Humidity: {{humidity}}%<br>
+          <br>
+          {{day_plus1}}={{day_plus1_type}} | {{day_plus1_low}}-{{day_plus1_high}}°C <br>
+          {{day_plus2}}={{day_plus2_type}} | {{day_plus2_low}}-{{day_plus2_high}}°C <br>
+          {{day_plus3}}={{day_plus3_type}} | {{day_plus3_low}}-{{day_plus3_high}}°C <br>
+          {{day_plus4}}={{day_plus4_type}} | {{day_plus4_low}}-{{day_plus4_high}}°C <br>
+          <br>
+        </center>
+
+      </div>
+      <div class='col-sm-4'></div>
+      <div class='col-sm-4'>
+          <center><br>
+            <h4>{{time}}<br>
+            {{date}}</h4><br>
+            <b>Today's Prediction</b><br>
+            <p>
+               {{prediction}}
+            </p>
+          </center>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class='col-sm-4'>
+          <p class="box_news">
+          <center><b>Top News<br></b></center>
+           <span>
+             1. {{news1}}<br>
+             2. {{news2}}<br>
+             3. {{news3}}<br>
+             4. {{news4}}<br>
+             5. {{news5}}<br>
+          </span></p>
+      </div>
+      <div class='col-sm-4'><center>Hey Abhi !</center></div>
+      <div class='col-sm-4'>
+        <center>
+              <b>Today's Events:<br><br>
+                {% if cal_events == "No upcoming events found." %}
+                    No activites planned for the day.
+                {% else %}
+                    {% for i in cal_events %}
+                         {{i}}<br>
+                    {% endfor %}
+                {% endif %}
+        </center>
+
+      </div>
+    </div>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>

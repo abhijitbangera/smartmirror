@@ -168,4 +168,4 @@ def mypage(request):
 	
  	
 	
-	return render(request, "index.html", context)
+	return render(request, "index2.html", context)

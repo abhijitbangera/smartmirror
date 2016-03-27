@@ -3,6 +3,7 @@
 <head>
 	<title>Smart Mirror</title>
 </head>
+<meta http-equiv="refresh" content="30" />
 <style type="text/css" media="screen"><!--
 body 
     {
@@ -161,7 +162,7 @@ a:hover
 	    
 	    {% if weather_type == 'Partly Cloudy' %}
 	       <img src="static/media/partly-cloudy.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
-        {% elif weather_type == 'Clear' %}
+        {% elif weather_type == 'Clear' or 'Fair' %}
             <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
         {% elif weather_type == 'Mostly Sunny' %}
             <img src="static/media/clear.png" alt="" style="width:100px;height:100px;position:relative;top:0px;left:0px"/>
@@ -203,14 +204,16 @@ a:hover
          <span>
            {{prediction}}
         </span>
-
-        
-        <p class="google_calendar">
-        <b>Today's Events:<br><br></b>
-         <span>
-        {% for i in cal_events %}
-            {{i.count}} {{i}}<br>
-        {% endfor %}
+            <p class="google_calendar">
+            <b>Today's Events:<br><br></b>
+        <span>
+        {% if cal_events == "No upcoming events found." %}
+            No activites planned for the day.
+        {% else %}
+            {% for i in cal_events %}
+                 {{i}}<br>
+            {% endfor %}
+        {% endif %}
 
         </span></p>
 
