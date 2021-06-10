@@ -1,7 +1,7 @@
 apiclient==1.0.2
 beautifulsoup4==4.4.1
 cssselect==0.9.1
-Django==1.9.4
+Django==2.2.24
 feedfinder2==0.0.4
 feedparser==5.2.1
 google-api-python-client==1.5.0
